@@ -17,6 +17,7 @@ user
 
 The table for user looks something like this in MySql.
 
+```
 CREATE TABLE `user` (
   `id` varchar(64) NOT NULL,
   `name` varchar(255) NOT NULL,
@@ -29,6 +30,7 @@ CREATE TABLE `user` (
   UNIQUE KEY `ixu_user_name_domain_id` (`domain_id`,`name`),
   CONSTRAINT `fk_user_domain_id` FOREIGN KEY (`domain_id`) REFERENCES `domain` (`id`)
 )
+```
 
 This table looks the same in MagnetoDB with the exception that the primary key 
 is (`domain_id`, `name`) and there is a GSI on id field. This was done to keep 
